@@ -1,0 +1,11 @@
+.venv/
+.venv-win/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.DS_Store
+.env
+*.sqlite*
+*.session.json

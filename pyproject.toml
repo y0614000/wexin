@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "group-chat-reader"
+version = "0.1.3"
+description = "Local WeCom chat reader reconstructed from GroupChatReader-WinR4"
+requires-python = ">=3.11"
+dependencies = [
+  "PySide6-Essentials>=6.8,<7",
+  "certifi>=2025.1.31",
+  "pyobjc-framework-ApplicationServices>=11; sys_platform == 'darwin'",
+  "pyobjc-framework-Cocoa>=11; sys_platform == 'darwin'",
+  "pyobjc-framework-Quartz>=11; sys_platform == 'darwin'",
+  "pywinauto>=0.6.9,<0.7; sys_platform == 'win32'",
+  "pywin32>=306; sys_platform == 'win32'",
+]
+
+[project.optional-dependencies]
+build = ["pyinstaller>=6.16,<7"]
+
+[project.scripts]
+group-chat-reader = "groupreader.gui:main"
+
+[tool.setuptools.packages.find]
+include = ["groupreader*"]
+
+[tool.setuptools.package-data]
+groupreader = ["licenses/*.txt"]
